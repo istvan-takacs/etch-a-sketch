@@ -12,7 +12,19 @@ body {
     flex-direction: column;
     height: 100vh;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #145897 0%, #7d16d1 100%);
+    color: #333232;
+
 }
+
+h1 {
+    color: rgb(209, 224, 209);
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
 
 .page-content {
     display: flex;
@@ -22,34 +34,65 @@ body {
 }
 
 .square-container {
-    border: solid black 1px;
+    border: rgb(209, 224, 209);
     display: flex;
     flex: 1 1;
-    width: 38rem;
-    height: 38rem;
+    width: 41rem;
+    height: 41rem;
     flex-direction: column;
+    user-select: none;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+
 }
 
 .row { 
     display: flex;
     flex: 1 1;
-
 }
 
 .square {
     flex: 1 1;
-    border: solid;
+    border: 0.5px solid rgba(81, 72, 186, 0.2);
+    background:rgb(213, 228, 222);
 }
 
 .button-container {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 320px;
+    justify-content: center;
+    gap: 40px;
+    background:rgb(213, 228, 222);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-bottom: 40px;
 }
 
 .slidecontainer {
-  width: 100%; /* Width of the outside container */
-  /* border: solid #04AA6D; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%; /* Width of the outside container */
+
+}
+
+.slidecontainer h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #370b8a;
+    font-weight: 600;
+}
+
+#gridSizeText {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #370b8a;
 }
 
 /* The slider itself */
@@ -58,27 +101,104 @@ body {
     width: 100%;
     height: 15px;
     border-radius: 5px;  
-    background: #d3d3d3;
+    background: #145897;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
 }
 
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%; 
-  background: #04AA6D;
-  cursor: pointer;
+.slider:hover {
+    opacity: 1;
 }
 
+.slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; 
+    background: #370b8a;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #04AA6D;
-  cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #370b8a;
+    cursor: pointer;
+    border: none;
+}
+
+#palette div{
+    display:flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#palette div button {
+    flex-basis: 45px;
+    height: 45px;
+    border-radius: 8px;
+    border: 3px solid #8a74b2;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#palette h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #370b8a;
+    font-weight: 600;
+}
+
+#palette { 
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#palette div button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#palette div button:active {
+    border: 3px solid #333;
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.clear-button {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.clear-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.clear-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
