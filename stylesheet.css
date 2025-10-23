@@ -3,28 +3,27 @@
   
 }
 
-
 body {
     display: flex;
     flex: 1 1 auto;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;  /* Changed from height to min-height */
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #145897 0%, #7d16d1 100%);
+    background: linear-gradient(to bottom, #145897 0%, #7d16d1 100%);
+    background-attachment: fixed;  /* Add this - keeps gradient fixed to viewport */
     color: #333232;
-
 }
+
 
 h1 {
     color: rgb(209, 224, 209);
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
-
 
 .page-content {
     display: flex;
@@ -34,7 +33,7 @@ h1 {
 }
 
 .square-container {
-    border: rgb(209, 224, 209);
+    border: #d1e0d1;
     display: flex;
     flex: 1 1;
     width: 41rem;
@@ -44,7 +43,6 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     overflow: hidden;
-
 }
 
 .row { 
@@ -55,7 +53,7 @@ h1 {
 .square {
     flex: 1 1;
     border: 0.5px solid rgba(81, 72, 186, 0.2);
-    background:rgb(213, 228, 222);
+    background:#d5e4de;
 }
 
 .button-container {
@@ -63,9 +61,9 @@ h1 {
     flex-direction: column;
     width: 320px;
     justify-content: center;
-    gap: 40px;
+    gap: 35px;
     background:rgb(213, 228, 222);
-    padding: 30px;
+    padding: 25px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     margin-bottom: 40px;
@@ -95,7 +93,6 @@ h1 {
     color: #370b8a;
 }
 
-/* The slider itself */
 .slider {
     -webkit-appearance: none;
     width: 100%;
@@ -126,7 +123,6 @@ h1 {
     cursor: pointer;
     transition: transform 0.2s;
 }
-
 
 .slider::-moz-range-thumb {
     width: 20px;
@@ -173,12 +169,16 @@ h1 {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-#palette div button:active {
+#palette div button.selected {
     border: 3px solid #333;
-    transform: scale(1.2);
+    transform: scale(1.1);
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
+
+#lighten,
+#darken,
+#goCrazy,
 .clear-button {
     padding: 12px 24px;
     font-size: 1.1rem;
@@ -193,12 +193,37 @@ h1 {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+#darken {
+    background:#6010b1
+}
+#lighten {
+    background: #8094ed;
+}
+
+#lighten:hover,
+#darken:hover,
+#goCrazy:hover,
 .clear-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
+#lighten:active,
+#darken:active,
+#goCrazy:active,
 .clear-button:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); 
+    box-shadow: inset 0 4px 8px rgba(0,0,0,0.3); 
+    transform: translateY(2px); 
+}
+
+#lighten.active,
+#darken.active,
+#goCrazy.active {
+    box-shadow: inset 0 4px 8px rgba(0,0,0,0.3); 
+    transform: translateY(2px);
+    background: linear-gradient(90deg, #ff0000,purple, blue);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
 }
